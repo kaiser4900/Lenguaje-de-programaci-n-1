@@ -19,7 +19,7 @@ try
             else{
                 for(int i=0; i<nombres.size();i++){
                     if(name==nombres[i]){
-                        throw runtime_error("ya ingresaron ese nombre");
+                        throw runtime_error("Datos repetidos");
                     }
                 }
                 notas.push_back(nota);
@@ -28,6 +28,10 @@ try
             }
         }
         else{
+            cout<<"Los datos guardados con exito son: "<<endl;
+            for(int x=0; x<nombres.size();++x){
+                cout<<nombres[x]<<" "<<notas[x]<<endl;
+            }
             return 0;
         }
     }
