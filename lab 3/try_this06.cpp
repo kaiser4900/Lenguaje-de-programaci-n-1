@@ -1,7 +1,8 @@
 #include <iostream>
 #include<stdexcept>
 #include<vector>
-#include<random>
+#include<time.h>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -21,20 +22,29 @@ int dificultad(string a){
 
 }
 int randint(int min,int max){
-    static default_random_engine ran;
-    return uniform_int_distribution<>{min, max}(ran);
+    int a;
+
+    srand(time(NULL));
+
+		a = min + rand() % ((max+min)-min);
+		return a;
 }
 int randint(int max){return randint(0,max);}
 
-int main()
-try
+
+
+int jugar()
+
 {
+    string otra =" ";
+
+
     string a;
     cout<<"Seleccione la dificultad (dificil normal facil): ";
     cin>>a;
     vector<int>incognita;
     for(int i=0; i<dificultad(a);++i)
-        if(i==0){incognita.push_back(randint(2,9));}
+        if(i==0){incognita.push_back(randint(1,9));}
         else{
             incognita.push_back(randint(9));}
 
@@ -42,8 +52,6 @@ try
     int toro=0;
 
     cout<<"Acabamos de crear el numero que usted va a adivinar por favor haga su primer intento: ";
-
-
 
     for(int intentos=1;toro!=dificultad(a);++intentos){
 
@@ -100,18 +108,24 @@ try
 
     if(toro==dificultad(a)){
         cout<<"Felicidades has ganado con "<<intentos<<" intento(s)\n";
-        return 0;
+        jugar();
+
         }
 
     else{
         cout<<"Usted tiene "<<toro<<" toros y "<<vaca<<" vacas \n";
         cout<<"Realizo "<<intentos<<" intento(s)\n";
     }
-    intentos++;
+
 
 
     }
+
     }
+
+    int main()try{jugar();
+    }
+
     catch (exception& e){
 	cerr<<"error: "<<e.what()<<"\n";
     return 0;
