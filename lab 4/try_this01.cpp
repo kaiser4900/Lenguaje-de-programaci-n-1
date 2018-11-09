@@ -35,7 +35,8 @@ using namespace std;
             else{
                 g(m+2); }
         }
-        X(){}
+        //estoy poniendo struct aqui
+        struct X(){}
         void m3(){}
         void main(){
             X a; a.f(2);
