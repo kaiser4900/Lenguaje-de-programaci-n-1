@@ -12,9 +12,9 @@ try
 	int a=0,b=0,c=0;
 
 	double resultado1=0,resultado2=0;
-	cout<<"Ingresa \"A\" y \"B\"y \"C\": ";cin>>a;cin>>b;cin>>c;
+	cout<<"Ingresa \"A\" y \"B\"y \"C\": ";cin>>a>>b>>c;
 
-	if((pow(b,2)-(4*(a*c)))>0){
+	if((pow(b,2)-(4*(a*c)))>=0){
 
 	resultado1=(-b+(sqrt(pow(b,2)-(4*(a*c)))))/(2*a);
 	resultado2=(-b-(sqrt(pow(b,2)-(4*(a*c)))))/(2*a);
