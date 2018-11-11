@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-void swap(double& di, double& d2){
+void swap(double& d1, double& d2){
 
     double temp = d1;
     d1 = d2;
