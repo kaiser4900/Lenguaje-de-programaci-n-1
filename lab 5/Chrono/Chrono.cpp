@@ -49,7 +49,26 @@ bool is_date(int y, Date:: Month mint d)
 }
  bool leapyear(int y)
  {
-     return false;
+     bool leapyear (int anio)
+{
+    bool res = false;
+
+    if (0 == anio%4)
+        {
+            res=true;
+
+            if(0 == anio%100)
+            {
+                res= false;
+                if (0 == anio%400)
+                {
+                    res = true;
+                }
+            }
+        }
+
+    return res;
+}
  }
 
  bool operator == (const Date& a, const Date& b)
