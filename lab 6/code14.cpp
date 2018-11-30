@@ -34,7 +34,7 @@ try
         incr_p(p);
     }
 catch (exception& e){
-    cerr<<"error": <<e.what()<< '\n';
+    cerr<<"error: " <<e.what()<< '\n';
     return 1;
 }
 }
