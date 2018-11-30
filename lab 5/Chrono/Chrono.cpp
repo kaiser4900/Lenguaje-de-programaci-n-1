@@ -1,5 +1,5 @@
 #include "Chrono.h"
-
+#include<ostream>
 namespace Chrono {
 
 Date:: Date(int yy, Month mm, int dd)
@@ -49,18 +49,17 @@ bool is_date(int y, Date:: Month mint d)
 }
  bool leapyear(int y)
  {
-     bool leapyear (int anio)
-{
+
     bool res = false;
 
-    if (0 == anio%4)
+    if (0 == y%4)
         {
             res=true;
 
-            if(0 == anio%100)
+            if(0 == y%100)
             {
                 res= false;
-                if (0 == anio%400)
+                if (0 == y%400)
                 {
                     res = true;
                 }
@@ -68,7 +67,7 @@ bool is_date(int y, Date:: Month mint d)
         }
 
     return res;
-}
+
  }
 
  bool operator == (const Date& a, const Date& b)
@@ -80,7 +79,7 @@ bool is_date(int y, Date:: Month mint d)
 
  bool operator!=(const Date& a, const Date& b)
  {
-     return 1(a==b);
+     return !(a==b);
  }
 
  ostream& operator<<(ostream& os, const Date& d)

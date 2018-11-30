@@ -1,5 +1,7 @@
 #ifndef CHRONO_H
 #define CHRONO_H
+#include<ostream>
+
 
 
 namespace Chrono {
@@ -11,9 +13,11 @@ public :
         jan = 1, feb, mar, apr, may, jun, jul, aug,
         sep, oct, nov, dec
     };
-    class Invalid{};
+    class Invalid{ };
+
     Date (int y, Month m, int d);
     Date();
+
     int day()     const{return d;}
     Month month() const{return m;}
     int year()    const{return y;}
@@ -26,6 +30,7 @@ private:
     Month m;
     int d;
 };
+
 bool is_date(int y, Date :: Month m, int d);
 
 bool leapyear(int y);
