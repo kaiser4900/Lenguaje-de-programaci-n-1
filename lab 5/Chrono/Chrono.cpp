@@ -31,16 +31,17 @@ void Date:: add_year(int n)
     }
     y+==n;
 }
-bool is_date(int y, Date:: Month mint d)
+bool is_date(int y, Date:: Month m, int d)
 {
     if(d<=0) return false;
     int days_in_month = 31;
 
     switch(m){
-        case Date:: feb;
-            days_in_month = (leapyear(y))?29:28;
+        case Date:: feb:
+            if (leapyear(y))days_in_month=29;
+            if(leapyear(y)==false)days_in_month=28;
         break;
-        case Date:: apr: case Date :: jun: case Date:: sep
+        case Date:: apr: case Date :: jun: case Date:: sep:
         days_in_month=30;
         break;
     }

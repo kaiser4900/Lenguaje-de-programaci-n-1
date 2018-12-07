@@ -13,7 +13,7 @@ public :
         jan = 1, feb, mar, apr, may, jun, jul, aug,
         sep, oct, nov, dec
     };
-    class Invalid{ };
+    class Invalid{runtime_error("invalido"); };
 
     Date (int y, Month m, int d);
     Date();
