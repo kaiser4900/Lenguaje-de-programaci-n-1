@@ -1,6 +1,5 @@
-#ifndef CHRONO_H
-#define CHRONO_H
-#include<ostream>
+
+#include<iostream>
 
 
 
