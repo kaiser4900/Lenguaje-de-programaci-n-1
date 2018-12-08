@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-//no sé por qué manda error :,v si "mañana" no me logro despertar para corregirlo le pido su comprensión :,v no estoy seguro si aparece la hora de subida
+
 int main(){
 
 char* findX(const char* s, const char* x) {
