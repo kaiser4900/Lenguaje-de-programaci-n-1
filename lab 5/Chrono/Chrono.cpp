@@ -1,5 +1,5 @@
 #include<iostream>
-#include<chrono.h>
+#include<Chrono>
 
 using namespace std;
 
@@ -23,17 +23,32 @@ Date :: Date()
 {
 }
 
-void Date:: add_day(int n){}
-void Date:: add_month(int n){}
-void Date:: add_year(int n)
-
+void Date:: add_day(int n)
 {
     if(m==feb && d==29 &&!leapyear(y+n)){
         m=mar;
         d=1;
     }
+    d+=n;
+}
+void Date:: add_month(int n)
+{
+    if(m+n>=dec)
+    {
+        m=jan;
+        m+=n-1;
+    }
+    else
+    {
+        m+=n;
+    }
+}
+
+void Date:: add_year(int n)
+{
     y+=n;
 }
+
 bool is_date(int y, Date:: Month m, int d)
 {
     if(d<=0) return false;
@@ -93,14 +108,25 @@ bool is_date(int y, Date:: Month m, int d)
                <<','<<d.day()
                <<')';
  }
+ istream& operator>>(istream& is, Date& dd)
+ {
+     int y, m, d;
+      char o,rd,e,n;
+      is >> o >> y >> rd >> m >> e >> d >> n;
+      if (o!='(' || rd!=',' || e!=',' || n!=')') {
+         throw Invalid();
+      }
+      dd = Date(y,Month(m),d);
+      return is;
+ }
  enum Day {
     sunday, monday, tuesday, wednesday,
     thursday, friday, saturday
  };
 
- Day day_of_week  (const Date& d){return sunday;}
- Date next_Sunday (const Date& d){return d;}
- Date next_weekday(const Date& d){return d;}
+ Day day_of_week  (const Date& d){ return sunday;}
+ Date next_Sunday (const Date& d){ return d;}
+ Date next_weekday(const Date& d){ return d;}
 }
 
 
@@ -113,6 +139,7 @@ try
 
     cout<<"Feriado es "<<holiday<<
     " d2 es "<<d2<<endl;
+
     return holiday != d2;
 }
 

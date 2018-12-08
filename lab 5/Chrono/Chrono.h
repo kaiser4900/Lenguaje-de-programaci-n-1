@@ -1,9 +1,8 @@
-
 #include<iostream>
 
 
 
-namespace Chrono {
+namespace Chrono{
 
 class Date {
 
@@ -41,4 +40,3 @@ istream& operator>>(istream& is, Date& dd);
 
 }
 
-#endif // CHRONO_H
