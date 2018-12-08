@@ -19,7 +19,29 @@ private:
     Link* prev;
     Link* succ;
 };
+const Link* Link::find(const string& s) const {
+    const Link* p = this;
+    while (p) {
+        if (p->value==s) cout<<"\nencontre: "<<s;
+        p = p->succ;
+    }
+    return 0;
+}
 
+Link* Link::find(const string& s) {
+    Link* p = this;
+    while (p) {
+        if (p->value==s) cout<<"\nencontre: "<<s;
+        p = p->succ;
+    }
+    return 0;
+}
+Link* Link::erase() {
+    if (this==0) return 0;
+    if (succ) succ->prev = prev;
+    if (prev) prev->succ = succ;
+    return succ;
+}
 Link* Link::insert(Link* n)
 {
     if(n==0)return this;
@@ -35,16 +57,17 @@ void Link::imprimir()
 Link*o=this;
 while (o)
 {
-cout<<o->value<<" ";
-o=o->succ;
+    cout<<o->value<<" ";
+    o=o->succ;
 }
 }
 int main()
 {
-    Link* p = new Link("Hola");
+    Link* t = new Link("Hola");
     Link* q = new Link("juan");
     Link* r = new Link(":v");
-    q=q->insert(p);
+    q=q->insert(t);
     q=q->insert(r);
     q->imprimir();
+    q->find(":v");
 }
