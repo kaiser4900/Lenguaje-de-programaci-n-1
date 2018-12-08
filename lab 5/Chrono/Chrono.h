@@ -1,7 +1,5 @@
 #include<iostream>
 
-
-
 namespace Chrono{
 
 class Date {
