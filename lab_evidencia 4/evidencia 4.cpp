@@ -1,12 +1,13 @@
 #include<iostream>
 using namespace std;
 
-//no sé por qué manda error :,v si mañana no me logro despertar para corregirlo le pido su comprensión :,v no estoy seguro si aparece la hora de subida
+//no sé por qué manda error :,v si "mañana" no me logro despertar para corregirlo le pido su comprensión :,v no estoy seguro si aparece la hora de subida
 int main(){
 
 char* findX(const char* s, const char* x) {
     int res=0;
     if (x==0) return s;
+
     for (int i = 0; s[i]; ++i)
     {
         if (s[i] == x[0])
